@@ -111,7 +111,10 @@ If you prefer to run the project locally without Docker:
    vendor/bin/phpunit tests/BasketTest.php
    ```
 
+### Refrence <https://www.dropbox.com/scl/fi/n8x764do2iy0t1pff787b/architech-labs-code-test.pdf?dl=0&e=1&rlkey=uynfzjm445ejhlq7ijf5x5yvu>
+
+All implementation are according to the provided refrence document and results are matched with refrence results table.
+
 ```
 
-### Refrence
 
