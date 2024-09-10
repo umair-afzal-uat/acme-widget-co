@@ -1,16 +1,25 @@
 <?php
+
 class Offer
 {
-    private $productCode;
-    private $discountAmount;
+    private string $productCode;
+    private float $discountAmount;
 
-    public function __construct($productCode, $discountAmount)
+    /**
+     * @param string $productCode
+     * @param float $discountAmount
+     */
+    public function __construct(string $productCode, float $discountAmount)
     {
         $this->productCode = $productCode;
         $this->discountAmount = $discountAmount;
     }
 
-    public function apply($basket)
+    /**
+     * @param Basket $basket
+     * @return float
+     */
+    public function apply(Basket $basket): float
     {
         $redWidgetCount = 0;
         foreach ($basket->getProducts() as $product) {
@@ -18,10 +27,11 @@ class Offer
                 $redWidgetCount++;
             }
         }
-        // Return the discount amount as a float
+
+        // Return the discount amount if more than 1 widget; otherwise, return 0.0
         if ($redWidgetCount > 1) {
-            return (float)$this->discountAmount; // Ensure this is a float
+            return $this->discountAmount;
         }
-        return 0.0; // Return 0.0 as a float
+        return 0.0;
     }
 }

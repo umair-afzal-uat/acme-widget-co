@@ -2,10 +2,14 @@
 
 class Product
 {
-    public $code;
-    public $price;
+    public string $code;
+    public float $price;
 
-    public function __construct($code, $price)
+    /**
+     * @param string $code
+     * @param float $price
+     */
+    public function __construct(string $code, float $price)
     {
         $this->code = $code;
         $this->price = $price;
