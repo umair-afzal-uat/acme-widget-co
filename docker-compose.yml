@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile  # Adjust path if Dockerfile is in a subdirectory
+    volumes:
+      - .:/var/www/html  # Map the local root directory to /var/www/html in the container
+    ports:
+      - "8000:80"  # Map port 8000 on the host to port 80 in the container
+    environment:
+      - COMPOSER_ALLOW_SUPERUSER=1
